@@ -1,7 +1,7 @@
 CHANGELOG.md
 /test/results
-/dist
 /snapshot
+dist/
 .server/
 .vscode/
 .history/

@@ -91,7 +91,7 @@ func runSyftInDocker(t testing.TB, env map[string]string, image string, args ...
 			"-e",
 			"SYFT_CHECK_FOR_APP_UPDATE=false",
 			"-v",
-			fmt.Sprintf("%s:/syft", getSyftBinaryLocationByOS(t, "linux")),
+			fmt.Sprintf("%s:/syft.t", getSyftBinaryLocationByOS(t, "linux")),
 			image,
 			"/syft",
 		},
@@ -231,7 +231,7 @@ func getSyftBinaryLocationByOS(t testing.TB, goOS string) string {
 	// note: there is a subtle - vs _ difference between these versions
 	switch goOS {
 	case "darwin", "linux":
-		return path.Join(repoRoot(t), fmt.Sprintf("snapshot/%s-build_%s_%s/syft", goOS, goOS, archPath))
+		return path.Join(repoRoot(t), "./syft.t")
 	default:
 		t.Fatalf("unsupported OS: %s", runtime.GOOS)
 	}

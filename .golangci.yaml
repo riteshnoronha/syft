@@ -9,7 +9,6 @@ linters:
   disable-all: true
   enable:
     - asciicheck
-    - bodyclose
     - depguard
     - dogsled
     - dupl
@@ -34,12 +33,17 @@ linters:
     - stylecheck
     - typecheck
     - unconvert
-    - unparam
-    - unused
     - whitespace
+run:
+  skip-files:
+    -  syft/pkg/cataloger/golang/internal/xcoff/file.go
+    -  syft/pkg/cataloger/golang/internal/xcoff/xcoff.go
 
 # do not enable...
 #    - gochecknoglobals
+#    - unused
+#    - unparam
+#    - bodyclose
 #    - gochecknoinits    # this is too aggressive
 #    - rowserrcheck disabled per generics https://github.com/golangci/golangci-lint/issues/2649
 #    - godot

@@ -4,7 +4,6 @@
 
 // Package xcoff implements access to XCOFF (Extended Common Object File Format) files.
 
-//nolint:all
 package xcoff
 
 import (
